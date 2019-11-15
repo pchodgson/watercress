@@ -5,6 +5,28 @@
         <title>Team Watercress Save On Foods Mockup</title>
         <link href="base.css" rel="stylesheet"/>
         <script>
+         item1 = {
+             name: "Tomato Soup",
+             price: "$10",
+             mass: "400g",
+             CountryofOrigin: "CA",
+             vegetarian: true;
+         };
+         item2 = {
+             name: "Beef Soup",
+             price: "$14",
+             mass: "400g",
+             CountryofOrigin: "CA",
+             vegetarian: false;
+         };
+         item3 = {
+             name: "Corn Soup",
+             price: "$7",
+             mass: "250g",
+             CountryofOrigin: "US",
+             vegetarian: false;
+         };
+         items = [item1,item2,item3];
          function show_comparison_popup(button_click_event){
              document.querySelector('.popup').style.visibility = "visible";
          }
@@ -36,12 +58,44 @@
             <tr> <th><img alt="" src="bean-bacon.jpeg"/></th><td>TODO Description</td><td>TODO buttons</td> </tr>
             <tr> <th>Soup 2</tr> </th>
             <tr> <th>Soup 3</tr> </th>
+            <template>
+                <tr> <th><img alt="" src="bean-bacon.jpeg"/></th><td>TODO Description</td><td>TODO buttons</td> </tr>
+            </template>
         </table>
         <div class="popup"">
             <button onclick="hide_comparison_popup(event)" class="fr">x</button>
             <button onclick="expand_comparison_table(event)" class="fr">+</button>
-            <ul class="left-to-right">
-                <li>
+            <table class="transposed">
+                <tbody>
+                    <tr>
+                        <th>Soup 1</th>
+                        <td>mass</td>
+                        <td>price</td>
+                        <td>CoO </td>
+                        <td>etc TODO</td>
+                    </tr>
+                    <tr>
+                        <th>Soup 2</th>
+                        <td>mass</td>
+                        <td>price</td>
+                        <td>CoO </td>
+                        <td>etc TODO</td>
+                    </tr>
+                    <tr id="fill-column" ondragover ondrop>
+                        FILLME :O
+                    </tr>
+                    <template>
+                        <tr>
+                            <th>name</th>
+                            <td>mass</td>
+                            <td>price</td>
+                            <td>CoO</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+            <ul class="related-items left-to-right">
+                <li ondrag>
                     <div>Soup 1</div>
                     <div>TODO mass</div>
                     <div>TODO price</div>
@@ -49,7 +103,7 @@
                     <div>TODO protein</div>
                     <div>TODO add to cart</div>
                 </li>
-                <li>
+                <li ondrag>
                     <div>Soup 1</div>
                     <div>TODO mass</div>
                     <div>TODO price</div>
@@ -57,30 +111,16 @@
                     <div>TODO protein</div>
                     <div>TODO add to cart</div>
                 </li>
-                <li>
-                    <div>Soup 1</div>
-                    <div>TODO mass</div>
-                    <div>TODO price</div>
-                    <div>TODO calories</div>
-                    <div>TODO protein</div>
-                    <div>TODO add to cart</div>
-                </li>
-                <li>
-                    <div>Soup 1</div>
-                    <div>TODO mass</div>
-                    <div>TODO price</div>
-                    <div>TODO calories</div>
-                    <div>TODO protein</div>
-                    <div>TODO add to cart</div>
-                </li>
-                <li>
-                    <div>Soup 1</div>
-                    <div>TODO mass</div>
-                    <div>TODO price</div>
-                    <div>TODO calories</div>
-                    <div>TODO protein</div>
-                    <div>TODO add to cart</div>
-                </li>
+                <template>
+                    <li ondrag>
+                        <div>Soup 1</div>
+                        <div>TODO mass</div>
+                        <div>TODO price</div>
+                        <div>TODO calories</div>
+                        <div>TODO protein</div>
+                        <div>TODO add to cart</div>
+                    </li>
+                </template>
             </ul>
         </div>
     </body>
