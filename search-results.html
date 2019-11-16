@@ -4,40 +4,7 @@
         <meta charset="UTF-8"/>
         <title>Team Watercress Save On Foods Mockup</title>
         <link href="base.css" rel="stylesheet"/>
-        <script>
-         item1 = {
-             name: "Tomato Soup",
-             price: "$10",
-             mass: "400g",
-             CountryofOrigin: "CA",
-             vegetarian: true;
-         };
-         item2 = {
-             name: "Beef Soup",
-             price: "$14",
-             mass: "400g",
-             CountryofOrigin: "CA",
-             vegetarian: false;
-         };
-         item3 = {
-             name: "Corn Soup",
-             price: "$7",
-             mass: "250g",
-             CountryofOrigin: "US",
-             vegetarian: false;
-         };
-         items = [item1,item2,item3];
-         function show_comparison_popup(button_click_event){
-             document.querySelector('.popup').style.visibility = "visible";
-         }
-         function hide_comparison_popup(button_click_event){
-             document.querySelector('.popup').style.visibility = "hidden";
-         }
-         function expand_comparison_table(e){
-             console.log(e);
-             document.querySelector('.popup').style.width = "600";
-         }
-        </script>
+        <script src="base.js"> </script>
     </head>
     <body>
         <div class="trim">
@@ -51,74 +18,124 @@
             Search Results: soup  (12)
         </div>
         <div>
-            Refine v | Best Match v | <button onclick="show_comparison_popup(event)">Compare</button>     <button disabled class="fr">Tile</button><button class="fr"><strong>List</strong></button>
+            <!-- Refine v | Best Match v | -->
+            <button onclick="show_comparison_popup(event)">Compare</button>
+            <!-- <button disabled class="fr">Tile</button><button class="fr"><strong>List</strong></button> -->
         </div>
         <hr/>
-        <table class="searchResults">
-            <tr> <th><img alt="" src="bean-bacon.jpeg"/></th><td>TODO Description</td><td>TODO buttons</td> </tr>
-            <tr> <th>Soup 2</tr> </th>
-            <tr> <th>Soup 3</tr> </th>
-            <template>
-                <tr> <th><img alt="" src="bean-bacon.jpeg"/></th><td>TODO Description</td><td>TODO buttons</td> </tr>
-            </template>
+        <table>
+            <thead>
+                <th>Image</th>
+                <th>Descriptive Attributes</th>
+                <th>Controls</th>
+            </thead>
+            <tbody class="searchResults">
+                <tr>
+                    <td>
+                        <img alt="" class="picture" src="bean-bacon.jpeg"/>
+                    </td>
+                    <td>
+                        <div>Name</div>
+                        <div>Mass</div>
+                        <div>co</div>
+                    </td>
+                    <td class="price">Price</td>
+                    <td>
+                        <input name="" type="checkbox" value=""/>
+                        <button>Add to Cart</button>
+                    </td>
+                </tr>
+                <template>
+                    <tr>
+                    <td>
+                    <img alt="" src=""/>
+                        </td>
+                    <td>
+                    <div>name</div>
+                    <div>mass</div>
+                    <div>co</div>
+                        </td>
+                    <td>price</td>
+                    <td>
+                    <input name="" type="checkbox" value=""/>
+                    <button>Add to Cart</button>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
         </table>
         <div class="popup"">
             <button onclick="hide_comparison_popup(event)" class="fr">x</button>
             <button onclick="expand_comparison_table(event)" class="fr">+</button>
-            <table class="transposed">
+            <table>
+                <thead>
+                    <tr>
+                        <th>:)</th>
+                        <th>1</th>
+                        <th>2<button style="display: inline-block;">X</button></th>
+                        <template><th>
+                            <span>#</span><button style="display: inline-block;">X</button>
+                        </th></template>
+                        <!-- <th>3... TODO drag to add signifier?</th> -->
+                    </tr>
+                </thead>
                 <tbody>
                     <tr>
-                        <th>Soup 1</th>
-                        <td>mass</td>
-                        <td>price</td>
-                        <td>CoO </td>
-                        <td>etc TODO</td>
+                        <th>Img</th>
+                        <td> <img alt="" src="bean-bacon.jpeg"/> </td>
+                        <td> <img alt="" src="cheddar-cheese.jpeg"/> </td>
                     </tr>
                     <tr>
-                        <th>Soup 2</th>
-                        <td>mass</td>
-                        <td>price</td>
-                        <td>CoO </td>
-                        <td>etc TODO</td>
+                        <th>Name</th>
+                        <td>Campbell Bean Bacon Soup</td>
+                        <td>Campbell Cheddar Cheese Soup</td>
                     </tr>
-                    <tr id="fill-column" ondragover ondrop>
-                        FILLME :O
+                    <tr>
+                        <th>Nutritional</th>
+                        <td><span>250</span>kcal</td>
+                        <td><span>250</span>kcal</td>
                     </tr>
-                    <template>
-                        <tr>
-                            <th>name</th>
-                            <td>mass</td>
-                            <td>price</td>
-                            <td>CoO</td>
-                        </tr>
-                    </template>
+                    <tr>
+                        <th>Dietary</th>
+                        <td><div>Meat</div> <div>Nut Free</div></td>
+                        <td><div>Meat free</div> <div>Nut Free</div></td>
+                    </tr>
+                    <!-- <tr>
+                         <td>$<span>price</span></td>
+                         </tr><!--  --> -->
+                    <template> <tr> <th>Img</th> <template> <td>
+                        <img alt="" src=""/>
+                    </td> </template> </tr> </template>
+                    <template> <tr> <th>Name</th> <template> <td>
+                        <span>name</span>
+                    </td> </template> </tr> </template>
+                    <template><tr> <th>Nutrition</th> <template><td>
+                        <span>250</span>kcal
+                    </td></template> </tr></template>
+                    <template> <tr> <th>Diet</th> <template> <td>
+                        <div>Meat</div>
+                        <div>Nut</div>
+                    </td> </template> </tr> </template>
                 </tbody>
             </table>
+            TODO alternative items listing
             <ul class="related-items left-to-right">
                 <li ondrag>
-                    <div>Soup 1</div>
-                    <div>TODO mass</div>
-                    <div>TODO price</div>
-                    <div>TODO calories</div>
-                    <div>TODO protein</div>
-                    <div>TODO add to cart</div>
+                    <img alt="" src="bean-bacon.jpeg"/>
                 </li>
                 <li ondrag>
-                    <div>Soup 1</div>
-                    <div>TODO mass</div>
-                    <div>TODO price</div>
-                    <div>TODO calories</div>
-                    <div>TODO protein</div>
-                    <div>TODO add to cart</div>
+                    <img alt="" src="bean-bacon.jpeg"/>
+                </li>
+                <li ondrag>
+                    <img alt="" src="bean-bacon.jpeg"/>
+                </li>
+                <li ondrag>
+                    <img alt="" src="chicken-noodle.jpeg"/>
                 </li>
                 <template>
-                    <li ondrag>
-                        <div>Soup 1</div>
-                        <div>TODO mass</div>
-                        <div>TODO price</div>
-                        <div>TODO calories</div>
-                        <div>TODO protein</div>
-                        <div>TODO add to cart</div>
+                    <li ondrag data-name="">
+                        <img alt="" class="picture" src=""/>
+                        <span>name</span>
                     </li>
                 </template>
             </ul>
