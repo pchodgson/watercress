@@ -56,45 +56,34 @@
         <div class="popup"">
             <button onclick="hide_comparison_popup(event)" class="fr">x</button>
             <button onclick="expand_comparison_table(event)" class="fr">+</button>
-            <table>
-                <thead>
-                    <tr>
-                        <!-- <th>:)</th>
-                             <th>1</th>
-                             <th>2<button style="display: inline-block;">X</button></th> -->
-                        <template ><th>
-                            <!-- <span clas="number">a</span> -->
-                            <button style="display: inline-block;">X</button>
-                        </th></template>
-                        <!-- <th>3... TODO drag to add signifier?</th> -->
+            <table class="compare">
+                <template><tbody>
+                    <tr><th>Images</th>
+                        <template class="images"><td>
+                            <img alt="" src=""/>
+                        </td></template>
                     </tr>
-                </thead>
-                <tbody>
-                    <template><tbody>
-                        <tr><th>Images</th>
-                            <template class="images"><td>
-                                <img alt="" src=""/>
-                            </td></template>
-                        </tr>
-                        <tr> <th>Names</th>
-                            <template class="names"><td>
-                                <span class="name"></span>
-                            </td></template>
-                        </tr>
-                        <tr> <th>Nutrition</th>
-                            <template class="nutrition"><td>
-                                <span class="kcal"></span> kcal
-                            </td></template>
-                        </tr>
-                        <tr> <th>Dietary</th>
-                            <template class="diet"><td>
-                                <div class="meat"></div>
-                                <div class="nut"></div>
-                            </td></template>
-                        </tr>
-                    </tbody></template>
-                </tbody>
+                    <tr> <th>Names</th>
+                        <template class="names"><td>
+                            <span class="name"></span>
+                        </td></template>
+                    </tr>
+                    <tr> <th>Nutrition</th>
+                        <template class="nutrition"><td>
+                            <span class="kcal"></span> kcal
+                        </td></template>
+                    </tr>
+                    <tr> <th>Dietary</th>
+                        <template class="diet"><td>
+                            <div class="meat"></div>
+                            <div class="nuts"></div>
+                        </td></template>
+                    </tr>
+                </tbody></template>
             </table>
+            <div class="related-items">
+                Related Items: TODO onhover description?
+            </div>
             <ul class="related-items left-to-right">
                 <li ondrag>
                     <img alt="" src="bean-bacon.jpeg"/>

@@ -1,10 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     search_result_template = document.querySelector('tbody.searchResults template');
     search_result_target   = document.querySelector('tbody.searchResults');
-    comparison_table_body_template = document.querySelector('.popup table tbody template');
-    comparison_table_body_target   = document.querySelector('.popup table tbody');
-    comparison_table_head_row_template = document.querySelector('.popup table thead tr template');
-    comparison_table_head_row_target   = document.querySelector('.popup table thead tr');
+    comparison_table_body_template = document.querySelector('.popup table template');
+    comparison_table_body_target   = document.querySelector('.popup table ');
     render(search_result_target, search_result_template, items);
 });
 
@@ -107,10 +105,6 @@ function show_comparison_popup(button_click_event) {
         nutrition: get_comparison_data(),
         diet: get_comparison_data(),
     });
-    render(comparison_table_head_row_target, comparison_table_head_row_template,
-           [1,2,3]
-           // get_comparison_data()
-          );
 }
 function hide_comparison_popup(button_click_event){
     document.querySelector('.popup').style.visibility = "hidden";
@@ -154,6 +148,16 @@ function construct(template, data) {
                 if (chip) {
                     chip.src = data[key];
                 }
+                break;
+            case 'meat':
+                chip = frag.querySelector('.' + key);
+                if (chip) {chip.textContent = (data[key]) ? "Contains Meat" : "Vegetarian";}
+                break;
+            case 'nuts':
+                console.log('here');
+                chip = frag.querySelector('.' + key);
+                if (chip) {chip.textContent = (data[key]) ? "Contains Nuts" : "Nut Free";}
+                break;
             default:
                 chip = frag.querySelector('.' + key);
                 if (chip) {chip.textContent = data[key];}

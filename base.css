@@ -1,14 +1,29 @@
-input, button {display:block; }
-table {
-    width: 100%;
-}
-
-
-
+input, button {display:block;}
 .trim {
     background: #7ac253;
 }
 .fr {float: right;}
+table {width: 100%;}
+
+.popup {
+    border: 1px solid;
+    position: sticky;
+    bottom: 300px;
+    left: 200px;
+    width: 500px;
+    min-height: 45vh;
+    min-width: 50vw;
+    visibility: hidden;
+    /* overflow-x: scroll; */
+    background: white;
+}
+
+table.compare {
+}
+table.compare td {
+    padding: 10px;
+}
+
 .left-to-right>li {
     display: inline-block;
     width: 200px;
@@ -17,16 +32,13 @@ table {
     overflow-x: scroll;
     white-space: nowrap;
 }
-.popup {
-    border: 1px solid;
-    position: sticky;
-    bottom: 300px;
-    left: 200px;
-    width: 500px;
-    min-height: 35vh;
-    visibility: hidden;
-    /* overflow-x: scroll; */
-    background: white;
+.related-items {
+    position: absolute;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    bottom: 0;
 }
-
+div.meat[]
 table.searchResults tr { height: 50px !important;}
