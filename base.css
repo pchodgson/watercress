@@ -40,5 +40,7 @@ table.compare td {
     padding: 0;
     bottom: 0;
 }
-div.meat[]
+span.price::before {
+    content: "$";
+}
 table.searchResults tr { height: 50px !important;}
