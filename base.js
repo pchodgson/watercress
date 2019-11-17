@@ -22,8 +22,9 @@ class Soup {
     }
 }
 item1 = {
-    name: "Tomato Soup",
+    name: "Campbells Bean Bacon Soup",
     price: "$10",
+    img: "bean-bacon.jpeg",
     mass: "400g",
     CountryofOrigin: "CA",
     vegetarian: true
@@ -42,7 +43,7 @@ item3 = {
     CountryofOrigin: "US",
     vegetarian: false
 };
-items = [item1,item2,item3];
+soups = [item1,item2,item3];
 function show_comparison_popup(button_click_event){
     document.querySelector('.popup').style.visibility = "visible";
 }
@@ -53,38 +54,61 @@ function expand_comparison_table(e){
     console.log(e);
     document.querySelector('.popup').style.width = "600";
 }
+function log_type(data){
+    console.log(typeof data);
+}
 function construct(template, data) {
-    var frag = document.importNode(template, true).content.firstElementChild;
-    function interpret(data) {
+    // var frag = new DocumentFragment();
+    function interpret(template, data) {
         switch (typeof data) {
         case 'object':
-            if (Array.isArray(data)){
-                frag
+            if (Array.isArray(data)) {
+                console.log('constructing list!');
+                return construct_list(template, data);
             } else {
-                for (var key in data) {
-                    let element = template.querySelector('.' + key);
-                }
-                console.log('TODO object');}
-        case 'string': console.log('TODO string');
-        case 'number': console.log('TODO number');
+                console.log('constructing object!');
+                return construct_object(template, data);
+            }
+        case 'string': return data;
+        case 'number': return data;
+        default: return data;
         }
+    }
+    function construct_object(template, data) {
+        var frag = document.importNode(template, true).content.firstElementChild;
+        for (var key in data) {
+            // console.log(key);
+            switch (key) {
+            case 'img':
+                frag.querySelector('img').src = data[key];
+                console.log(key);
+            default:
+                let chip = frag.querySelector('.' + key);
+                if (chip) {chip.textContent = data[key];}
+                // console.log(key);
+            }
+        }
+        return frag;
     }
     function construct_list(template, data) {
         var frag = new DocumentFragment();
         for (let i = 0; i < data.length; i++) {
             frag.append(construct(template, data[i]));
         };
+        return document.importNode(frag, true);
     }
-    function construct_table(template, data) {
-        
-    }
-    return document.importNode(frag, true);
+    return interpret(template, data);
 }
 function render(template, data) {
-    console.log(template);
+    function replace(a, b) {
+        a.innerHTML = '';
+        a.appendChild(b);
+    }
+    console.log(template.parentElement);
     console.log(data);
+    console.log(construct(template, data));
+    replace(template.parentElement, construct(template,data));
 }
 document.addEventListener('DOMContentLoaded', () => {
-    let x = document.querySelectorAll('template');
-    console.log(x);
+    render(document.querySelector('tbody.searchResults template'), soups);
 });
