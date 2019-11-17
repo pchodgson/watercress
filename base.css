@@ -2,30 +2,6 @@ input, button {display:block; }
 table {
     width: 100%;
 }
-table.transposed thead {
-    display: inline-block;
-    /* overflow-x: scroll; */
-    /* white-space: nowrap; */
-}
-table.transposed tbody {
-    display: inline-block;
-    /* overflow-x: scroll; */
-    /* white-space: nowrap; */
-}
-table.transposed tr {
-    display: inline-block;
-    max-width: 100px;
-    /* float: left; */
-}
-table.transposed tr {
-    display: inline-block;
-    max-width: 100px;
-    /* float: left; */
-}
-table.transposed th { display: block; }
-table.transposed td { display: block;
-                      /* overflow-x: visible; */
-                    }
 
 
 

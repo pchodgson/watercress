@@ -30,21 +30,6 @@
                 <th>Controls</th>
             </thead>
             <tbody class="searchResults">
-                <!-- <tr>
-                     <td>
-                     <img alt="" class="picture" src="bean-bacon.jpeg"/>
-                     </td>
-                     <td>
-                     <div>Name</div>
-                     <div>Mass</div>
-                     <div>co</div>
-                     </td>
-                     <td class="price">Price</td>
-                     <td>
-                     <input name="" type="checkbox" value=""/>
-                     <button>Add to Cart</button>
-                     </td>
-                     </tr> -->
                 <template> <tr>
                     <td>
                         <img alt="" src=""/>
@@ -52,11 +37,13 @@
 
                     <td>
                         <div class="name"></div>
-                        <div class="mass"></div>
+                        <div><span class="mass"></span> ml</div>
                         <div class="country_of_origin"></div>
                     </td>
 
-                    <td class="price"></td>
+                    <td class="price">
+                        <span class="price"></span>
+                    </td>
 
                     <td>
                         <input name="" type="checkbox" value=""/>
@@ -72,55 +59,42 @@
             <table>
                 <thead>
                     <tr>
-                        <th>:)</th>
-                        <th>1</th>
-                        <th>2<button style="display: inline-block;">X</button></th>
+                        <!-- <th>:)</th>
+                             <th>1</th>
+                             <th>2<button style="display: inline-block;">X</button></th> -->
                         <template ><th>
-                            <span>#</span><button style="display: inline-block;">X</button>
+                            <!-- <span clas="number">a</span> -->
+                            <button style="display: inline-block;">X</button>
                         </th></template>
                         <!-- <th>3... TODO drag to add signifier?</th> -->
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>Img</th>
-                        <td> <img alt="" src="bean-bacon.jpeg"/> </td>
-                        <td> <img alt="" src="cheddar-cheese.jpeg"/> </td>
-                    </tr>
-                    <tr>
-                        <th>Name</th>
-                        <td>Campbell Bean Bacon Soup</td>
-                        <td>Campbell Cheddar Cheese Soup</td>
-                    </tr>
-                    <tr>
-                        <th>Nutritional</th>
-                        <td><span>250</span>kcal</td>
-                        <td><span>250</span>kcal</td>
-                    </tr>
-                    <tr>
-                        <th>Dietary</th>
-                        <td><div>Meat</div> <div>Nut Free</div></td>
-                        <td><div>Meat free</div> <div>Nut Free</div></td>
-                    </tr>
-                    <!-- <tr>
-                         <td>$<span>price</span></td>
-                         </tr><!--  --> -->
-                    <template> <tr> <th>Img</th> <template> <td>
-                        <img alt="" src=""/>
-                    </td> </template> </tr> </template>
-                    <template> <tr> <th>Name</th> <template> <td>
-                        <span>name</span>
-                    </td> </template> </tr> </template>
-                    <template><tr> <th>Nutrition</th> <template><td>
-                        <span>250</span>kcal
-                    </td></template> </tr></template>
-                    <template> <tr> <th>Diet</th> <template> <td>
-                        <div>Meat</div>
-                        <div>Nut</div>
-                    </td> </template> </tr> </template>
+                    <template><tbody>
+                        <tr><th>Images</th>
+                            <template class="images"><td>
+                                <img alt="" src=""/>
+                            </td></template>
+                        </tr>
+                        <tr> <th>Names</th>
+                            <template class="names"><td>
+                                <span class="name"></span>
+                            </td></template>
+                        </tr>
+                        <tr> <th>Nutrition</th>
+                            <template class="nutrition"><td>
+                                <span class="kcal"></span> kcal
+                            </td></template>
+                        </tr>
+                        <tr> <th>Dietary</th>
+                            <template class="diet"><td>
+                                <div class="meat"></div>
+                                <div class="nut"></div>
+                            </td></template>
+                        </tr>
+                    </tbody></template>
                 </tbody>
             </table>
-            TODO alternative items listing
             <ul class="related-items left-to-right">
                 <li ondrag>
                     <img alt="" src="bean-bacon.jpeg"/>
