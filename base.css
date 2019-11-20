@@ -43,4 +43,7 @@ table.compare td {
 span.price::before {
     content: "$";
 }
+.related-items * {
+    white-space: normal;
+}
 table.searchResults tr { height: 50px !important;}
