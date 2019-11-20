@@ -127,6 +127,7 @@ function show_comparison_popup(button_click_event) {
 function hide_comparison_popup(button_click_event) {
     document.querySelector('.popup').style.visibility = "hidden";
 }
+
 function register_item_name(event) {
     console.log(event.target.nextElementSibling.innerText);
     event.dataTransfer.setData('name', event.target.nextElementSibling.innerText);
