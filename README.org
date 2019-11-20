@@ -1,0 +1,66 @@
+** misc
+*** collect images into directory?
+    and update references
+*** TODO soup data
+    natural variety and consistent
+   
+** features
+   file:search-results.html
+*** search-table                                                        :css:
+**** DONE generate                                                       :js:
+     CLOSED: [2019-11-16 Sat 22:28]
+     DOMContentLoaded eventListener
+     or
+***** STRETCH functional search bar?
+       
+*** compare-table
+**** DONE bring up                                                       :js:
+     CLOSED: [2019-11-16 Sat 22:28]
+     selected items as global variables?
+***** DONE find selected items
+      CLOSED: [2019-11-16 Sat 22:27]
+***** DONE restrict on less than two items selected
+      CLOSED: [2019-11-17 Sun 14:46]
+****** Signify that at least two items must be selected?
+***** open button
+**** DONE close button                                                   :js:
+     CLOSED: [2019-11-16 Sat 22:28]
+**** rows
+***** Make header cells pretty?
+
+
+**** columns
+***** extend ondrop                                                      :js:
+***** TODO remove button                                                 :js:
+***** TODO bold 'optimal' cell                                       :js:css:
+
+
+**** related items
+***** TODO drag interaction                                              :js:
+       items to expand comparison-table
+***** display beneath the comparison-table
+    - long and wispy,
+      if it's used on touchscreen devices maximum viewport real-estate is desired. 
+***** 
+
+
+*** TODO visually appealing page                                        :css:
+    - switch to visually appealling but unrepresentative header?
+    - [ ] add sidebar
+
+       
+** DONE template architecture                                            :js:
+   CLOSED: [2019-11-16 Sat 22:29] DEADLINE: <2019-11-16 Sat>
+   works for 
+   - [X] search-results rows
+   - [X] comparison rows
+   - [X] related items
+**** syntax
+    - [X] data
+    - [X] template
+     
+    functions
+    - [X] data interpreter
+    - [X] constructor
+    - [X] html insertion
+    - [X] onpageload trigger
