@@ -17,7 +17,13 @@ header span {
 }
 .fr {float: right;}
 table {width: 100%;}
-
+.best {
+    font-weight: bold;
+}
+.tied {
+    font-weight: bold;
+    font-style: italic;
+}
 .popup {
     border: 1px solid;
     position: sticky;

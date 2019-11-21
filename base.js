@@ -119,6 +119,7 @@ function show_comparison_popup(button_click_event) {
         diet: get_comparison_data(),
     };});
     compare_table.render();
+    bold_optimal_attributes();
 }
 function hide_comparison_popup(button_click_event) {
     document.querySelector('.popup').style.visibility = "hidden";
@@ -130,7 +131,7 @@ function register_item_name(event) {
 function allowDrop(event){
     event.preventDefault();
 }
-// TODO refactor table update logic out of event handling logic
+// TODO refactor table update logic completely out of event handling logic
 // TODO check if table already contains item?
 function add_to_comparison_items(item_name_drop_event) {
     let item = items.find((y)=>{
@@ -149,6 +150,7 @@ function add_to_comparison_items(item_name_drop_event) {
         };
     });
     compare_table.render();
+    bold_optimal_attributes();
 }
 function remove_from_comparison_items(item_name){
     function item_name_filter(item){
@@ -164,9 +166,31 @@ function remove_from_comparison_items(item_name){
         };
     });
     compare_table.render();
+    bold_optimal_attributes();
 }
 function comparison_remove_handler(click_event){
     remove_from_comparison_items(click_event.target.parentElement.querySelector('span.name').innerText);
+}
+
+function bold_optimal_attribute(attr_name, ascending=true){
+    let bestList = [];
+    let lastbest = ascending ? 0 : Number.MAX_SAFE_INTEGER;
+    document.querySelector('table.compare').querySelectorAll('span.'+ attr_name).forEach((x)=>{
+        let val = parseInt(x.innerText);
+        if ((val > lastbest && ascending) || (val < lastbest && ! ascending) ) {
+            bestList = [x];
+            lastbest = val;
+        } else if (val == lastbest) {
+            bestList = bestList.concat(x);
+        }
+    });
+    let rank = (bestList.length > 1) ? "tied" : "best";
+    bestList.forEach((x)=>{
+        x.classList.add(rank);
+    });
+}
+function bold_optimal_attributes(){
+    bold_optimal_attribute("kcal", false);
 }
 
 function render(target, template, data) {
