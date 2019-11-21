@@ -54,10 +54,9 @@
                     <td>
                         <div class="name"></div>
                         <div><span class="mass"></span> ml</div>
-                        <div class="country_of_origin"></div>
+                        <div>Product of <span class="country_of_origin"></span></div>
                     </td>
-                    <td class="price">
-                        <span>$</span>
+                    <td>
                         <span class="price"></span>
                     </td>
                     <td>
@@ -74,20 +73,29 @@
             <!-- <button onclick="expand_comparison_table(event)" class="fr">+</button> -->
             <table class="compare" ondrop="add_to_comparison_items(event)" ondragover="allowDrop(event)">
                 <template><tbody>
-                    <tr><th>Images</th>
+                    <tr> <th></th>
                         <template class="images"><td>
                             <img alt="" src=""/>
                         </td></template>
                     </tr>
-                    <tr> <th>Names</th>
+                    <tr> <th>Item</th>
                         <template class="names"><td>
                             <span class="name"></span>
                             <button onclick="comparison_remove_handler(event)">X</button>
+                            <div>
+                                <span class="price"></span>
+                                <button class="trim">Add to Cart</button>
+                            </div>
                         </td></template>
                     </tr>
                     <tr> <th>Nutrition</th>
                         <template class="nutrition"><td>
-                            <span class="kcal"></span> kcal
+                            <div>
+                                <span class="mass"></span> ml
+                            </div> <!-- shut up it's basically the same thing for soup -->
+                            <div>
+                                <span class="kcal"></span> kcal
+                            </div>
                         </td></template>
                     </tr>
                     <tr> <th>Dietary</th>
@@ -98,10 +106,7 @@
                     </tr>
                 </tbody></template>
             </table>
-            <!-- <div class="related-items">
-                 Related Items: TODO onhover name/description?
-                 TODO Indicate drag action
-                 </div> -->
+            <h3>Related Items:</h3>
             <ul class="related-items left-to-right">
                 <template>
                     <li>

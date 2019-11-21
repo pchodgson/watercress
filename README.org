@@ -1,4 +1,20 @@
 ** misc
+   @Peter
+ - [X] could you update how you write country of origin (i.e. "product of countryname" instead of abbreviated form)?
+ - 
+ - [X] And add price again in the comparison table as an attribute
+ - [X] Oh and add dollar sign for prices
+ - 
+ - [-] And make the horizontal slide show view more evident
+   - [X] like put the header "Related Products"
+   - [ ] like maybe even make the portion of related products have a diff background colour?
+     - [ ] and by a different colour for related products, maybe you could put save on foods green as the background
+ - 
+ - [ ] and could we add a cart icon next to "My Cart" ?
+ - 
+ - [ ] and make arrows evident in the Related Products section
+   - [ ] so put one giant right scrolling arrow
+   - [ ] and one left scrolling arrow (one arrow on each side of the horizontal slide show view)
 *** collect images into directory?
     and update references
 *** soup data

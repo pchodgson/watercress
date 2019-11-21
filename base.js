@@ -30,28 +30,28 @@ function Soup(name, price, img, mass, meat, nuts, kcal, co) {
     };
 }
 items = [
-    Soup("Campbell's Bean Bacon Soup", 3.99, "bean-bacon.jpeg", 400, true, false, 500, "CA"),
-    Soup("Pacific Organic Soup Tomato", 4.59, "pacific-organic-tomato.png", 910, false, false, 500, "CA"),
-    Soup("Campbell's Chicken Noodle Soup", 3.99, "chicken-noodle.jpeg", 500, true, false, 500, "CA"),
-    Soup("Cream Mushroom", 2.79, "cream-mushroom.jpeg", 300, false, false, 500, "CA"),
+    Soup("Campbell's Bean Bacon Soup", 3.99, "bean-bacon.jpeg", 400, true, false, 500, "Canada"),
+    Soup("Pacific Organic Soup Tomato", 4.59, "pacific-organic-tomato.png", 910, false, false, 500, "Canada"),
+    Soup("Campbell's Chicken Noodle Soup", 3.99, "chicken-noodle.jpeg", 500, true, false, 500, "Canada"),
+    Soup("Cream Mushroom", 2.79, "cream-mushroom.jpeg", 300, false, false, 500, "Canada"),
     Soup("Progresso Traditional Soup Chicken Noodle", 3.29, "progresso-chicken-noodle.png", 540, true, false, 450, "USA"),
-    Soup("Consomme", 4.79, "consomme.jpeg", 400, true, false, 500, "CA"),
+    Soup("Consomme", 4.79, "consomme.jpeg", 400, true, false, 500, "Canada"),
     Soup("Bar Harbor Bisque Lobster New England Style", 5.19, "bar-harbor-lobster-bisque.png", 300, true, false, 450, "USA"),
-    Soup("Wolfgang Puck Bisque Organic Tomato Basil", 3.39, "wolfgang-puck-tomato-basil-bisque.png", 400, false, false, 180, "CA"),
-    Soup("Amys Soup Tom Kha Phak Thai Coconut", 3.69, "amys-thai-coconut.png", 390, false, true, 280, "CA"),
+    Soup("Wolfgang Puck Bisque Organic Tomato Basil", 3.39, "wolfgang-puck-tomato-basil-bisque.png", 400, false, false, 180, "Canada"),
+    Soup("Amys Soup Tom Kha Phak Thai Coconut", 3.69, "amys-thai-coconut.png", 390, false, true, 280, "Canada"),
     Soup("Progresso Traditional Soup New England Clam Chowder", 3.29, "pregresso-new-england-clam-chowder.png", 540, true, false, 300, "USA"),
     Soup("Campbell's Chicken Rice Soup", 3.89, "chicken-rice.jpeg", 350, true, false, 500, "USA"),
-    Soup("Organic Carrot", 4.59, "organic-carrot-ginger.jpeg", 240, false, false, 500, "CA"),
+    Soup("Organic Carrot", 4.59, "organic-carrot-ginger.jpeg", 240, false, false, 500, "Canada"),
     Soup("Campbell's Vegetable", 2.99, "vegetable.jpeg", 400, false, false, 500, "USA"),
-    Soup("Tim HortonsSoup - Chicken & Rice", 3.79, "tim-hortons-chicken-and-rice.png", 540, true, false, 400, "CA"),
+    Soup("Tim HortonsSoup - Chicken & Rice", 3.79, "tim-hortons-chicken-and-rice.png", 540, true, false, 400, "Canada"),
     Soup("Progresso Vegetable Classics Soup Tomato Basil", 3.29, "progresso-tomato-basil.png", 540, false, false, 220, "USA"),
-    Soup("Amys Soups Organic Lentil", 3.49, "amys-organic-lentil.png", 400, false, true, 200, "CA"),
-    Soup("Campbell's Cheddar Cheese Soup", 3.79, "cheddar-cheese.jpeg", 400, false, false, 500, "CA"),
+    Soup("Amys Soups Organic Lentil", 3.49, "amys-organic-lentil.png", 400, false, true, 200, "Canada"),
+    Soup("Campbell's Cheddar Cheese Soup", 3.79, "cheddar-cheese.jpeg", 400, false, false, 500, "Canada"),
     Soup("Cream Chicken", 2.79, "cream-chicken.jpeg", 400, true, false, 500, "USA"),
-    Soup("Campbell's Chicken Noodle Special", 5.49, "chicken-noodle-special.jpeg", 800, true, false, 900, "CA"),
+    Soup("Campbell's Chicken Noodle Special", 5.49, "chicken-noodle-special.jpeg", 800, true, false, 900, "Canada"),
     Soup("Progresso Rich & Hearty Soup Chicken & Homestyle Noodles", 3.29, "progresso-chicken-homestyle-noodles.png", 540, true, false, 400, "USA"),
-    Soup("Pacific Organic Soup Roasted Red Pepper & Tomato", 4.59, "pacific-red-pepper-and-tomato.png", 900, false, false, 350, "CA"),
-    Soup("Wolfgang Puck Soup Organic Hearty Garden Vegetable", 3.39, "wolfgang-puck-organic-garden-vegetable.png", 400, false, false, 330, "CA"),
+    Soup("Pacific Organic Soup Roasted Red Pepper & Tomato", 4.59, "pacific-red-pepper-and-tomato.png", 900, false, false, 350, "Canada"),
+    Soup("Wolfgang Puck Soup Organic Hearty Garden Vegetable", 3.39, "wolfgang-puck-organic-garden-vegetable.png", 400, false, false, 330, "Canada"),
 ];
 
 function get_item_name(row){
@@ -148,7 +148,7 @@ function bold_optimal_attribute(attr_name, ascending=true){
     let bestList = [];
     let lastbest = ascending ? 0 : Number.MAX_SAFE_INTEGER;
     document.querySelector('table.compare').querySelectorAll('span.'+ attr_name).forEach((x)=>{
-        let val = parseInt(x.innerText);
+        let val = parseFloat(x.innerText);
         if ((val > lastbest && ascending) || (val < lastbest && ! ascending) ) {
             bestList = [x];
             lastbest = val;
@@ -163,6 +163,8 @@ function bold_optimal_attribute(attr_name, ascending=true){
 }
 function bold_optimal_attributes(){
     bold_optimal_attribute("kcal", false);
+    bold_optimal_attribute("mass");
+    bold_optimal_attribute("price", false);
 }
 
 function render(target, template, data) {

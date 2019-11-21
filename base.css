@@ -1,4 +1,4 @@
-button {display:block;}
+/* button {display:block;} */
 header {
     width: 100%;
 }
@@ -65,6 +65,9 @@ span.price::before {
 .related-items * {
     white-space: normal;
 }
+/* .related-items img { */
+/*     opacity: 0.5; */
+/* } */
 table.searchResults tr { height: 50px !important;}
 
 
