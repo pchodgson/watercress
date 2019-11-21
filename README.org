@@ -1,7 +1,7 @@
 ** misc
 *** collect images into directory?
     and update references
-*** TODO soup data
+*** soup data
     natural variety and consistent
    
 ** features
@@ -14,6 +14,8 @@
 ***** STRETCH functional search bar?
        
 *** compare-table
+**** TODO Visual appeal
+    - [ ] correct proportions with normal range of dimensions
 **** DONE bring up                                                       :js:
      CLOSED: [2019-11-16 Sat 22:28]
      selected items as global variables?
@@ -36,7 +38,7 @@
 
 
 **** related items
-***** TODO drag interaction                                              :js:
+***** CLEAN drag interaction                                             :js:
        items to expand comparison-table
 ***** display beneath the comparison-table
     - long and wispy,
@@ -45,8 +47,10 @@
 
 
 *** TODO visually appealing page                                        :css:
-    - switch to visually appealling but unrepresentative header?
-    - [ ] add sidebar
+    - [ ] revamp header
+      probably just a string of spans with css specified width percentages
+    - Censensus: Don't add sidebar
+      probably just a string of divs with css specified height percentages
 
        
 ** DONE template architecture                                            :js:
