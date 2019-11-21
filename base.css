@@ -75,3 +75,7 @@ img {
     width: 85px;
     height: 85px;
 }
+.related-items img:hover {
+    width: 100px;
+    height: 100px;
+}

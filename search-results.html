@@ -84,7 +84,8 @@
                             <button onclick="comparison_remove_handler(event)">X</button>
                             <div>
                                 <span class="price"></span>
-                                <button class="trim">Add to Cart</button>
+                                <button onclick="add_to_cart_mimicry(event)"
+                                        class="trim">Add to Cart: <span class="quantity">0</span></button>
                             </div>
                         </td></template>
                     </tr>
@@ -111,6 +112,7 @@
                 <template>
                     <li>
                         <img alt="" class="picture" src=""
+                             title="Drag and drop onto table to add item"
                              draggable="true" ondragstart="register_item_name(event)"/>
                         <div class="name"></div>
                     </li>

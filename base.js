@@ -167,6 +167,12 @@ function bold_optimal_attributes(){
     bold_optimal_attribute("price", false);
 }
 
+function add_to_cart_mimicry(onclick){
+    let quant = onclick.target.querySelector('.quantity');
+    let incr = parseInt(quant.innerText) + 1;
+    quant.innerText = incr.toString();
+}
+
 function render(target, template, data) {
     function replace(a, b) {
         a.innerHTML = '';
