@@ -53,7 +53,7 @@ items = [
     Soup("Campbell's Chicken Rice Soup", 10, "chicken-rice.jpeg", 350,
          true, false,
          500,
-         "CA"
+         "USA"
         ),
     Soup("Consomme", 10, "consomme.jpeg", 400,
          true, false,
@@ -63,7 +63,7 @@ items = [
     Soup("Cream Chicken", 10, "cream-chicken.jpeg", 400,
          true, false,
          500,
-         "CA"
+         "USA"
         ),
     Soup("Cream Mushroom", 8, "cream-mushroom.jpeg", 300,
          false, false,
@@ -78,7 +78,7 @@ items = [
     Soup("Campbell's Vegetable", 10, "vegetable.jpeg", 400,
          false, false,
          500,
-         "CA"
+         "USA"
         )
 ];
 
@@ -170,7 +170,7 @@ function remove_from_comparison_items(item_name){
     });
     compare_table.render();
 }
-
+// TODO button click event handler
 
 function render(target, template, data) {
     function replace(a, b) {
