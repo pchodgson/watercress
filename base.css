@@ -66,3 +66,9 @@ span.price::before {
     white-space: normal;
 }
 table.searchResults tr { height: 50px !important;}
+
+
+img {
+    width: 85px;
+    height: 85px;
+}
