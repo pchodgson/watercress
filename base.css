@@ -1,6 +1,19 @@
 button {display:block;}
+header {
+    width: 100%;
+}
+header span {
+    width: 14vw;
+    display: inline-block
+}
 .trim {
     background: #7ac253;
+    padding: 5px;
+    border-radius: 4px;
+    color: white;
+    font-variant: small-caps;
+    font-family: sans-serif;
+    white-space: nowrap;
 }
 .fr {float: right;}
 table {width: 100%;}
@@ -10,8 +23,8 @@ table {width: 100%;}
     position: sticky;
     bottom: 300px;
     left: 200px;
-    max-width: 800px;
-    min-height: 45vh;
+    max-width: 1000px;
+    min-height: 600px;
     min-width: 50vw;
     visibility: hidden;
     /* overflow-x: scroll; */

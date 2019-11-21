@@ -8,11 +8,23 @@
     </head>
     <body>
         <!-- TODO revamp header -->
-        <div class="trim">
-            Save <strong>On</strong> Foods
-        </div>
-        <div>
-            Picking up at Vancouver Kerrisdale 6455 West Boulevard
+        <header>
+            <div >
+                <!-- Save <strong>On</strong> Foods -->
+                <img alt="" src="save-on-foods-logo.png"/>
+            </div>
+            <span class="trim">shop departments</span>
+            <span class="trim">shop recipes</span>
+            <span class="trim"><input name="" type="text" value="Soup"/></span>
+            <span class="trim">sign in or register</span>
+            <span class="trim">reserve time slot</span>
+            <span class="trim">my cart</span>
+        </header>
+        <!-- <div>
+             Picking up at Vancouver Kerrisdale 6455 West Boulevard
+             </div> -->
+        <div class="breadcrumbs">
+            <span>Shop Home</span> > <span>Search Results</span>
         </div>
         <hr/>
         <div>
@@ -20,7 +32,7 @@
         </div>
         <div>
             <!-- Refine v | Best Match v | -->
-            <button onclick="show_comparison_popup(event)">Compare</button>
+            <button class="fr" onclick="show_comparison_popup(event)">Compare</button>
             <!-- <button onclick="comparison_table.show(event)">Compare</button> -->
             <!-- <button disabled class="fr">Tile</button><button class="fr"><strong>List</strong></button> -->
         </div>
@@ -70,6 +82,7 @@
                     <tr> <th>Names</th>
                         <template class="names"><td>
                             <span class="name"></span>
+                            <button onclick="comparison_remove_handler(event)">X</button>
                         </td></template>
                     </tr>
                     <tr> <th>Nutrition</th>

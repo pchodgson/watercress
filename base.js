@@ -30,7 +30,7 @@ function Soup(name, price, img, mass, meat, nuts, kcal, co) {
     };
 }
 items = [
-    Soup("Cambells's Bean Bacon Soup", 10, "bean-bacon.jpeg", 400,
+    Soup("Campbell's Bean Bacon Soup", 10, "bean-bacon.jpeg", 400,
          true, false,
          500,
          "CA"
@@ -83,7 +83,6 @@ items = [
 ];
 
 function get_item_name(row){
-    console.log(row.querySelector('.name').innerHTML);
     return row.querySelector('.name').innerHTML;
 }
 function comparison_box_checked(row) {
@@ -104,9 +103,6 @@ function get_comparison_data() {
 }
 
 function show_comparison_popup(button_click_event) {
-
-
-    // console.log(get_comparison_data());
     if (get_comparison_data().length < 2) {return;}
     document.querySelector('.popup').style.visibility = "visible";
     render(related_items_target, related_items_template, items);
@@ -129,7 +125,6 @@ function hide_comparison_popup(button_click_event) {
 }
 
 function register_item_name(event) {
-    console.log(event.target.nextElementSibling.innerText);
     event.dataTransfer.setData('name', event.target.nextElementSibling.innerText);
 }
 function allowDrop(event){
@@ -138,7 +133,6 @@ function allowDrop(event){
 // TODO refactor table update logic out of event handling logic
 // TODO check if table already contains item?
 function add_to_comparison_items(item_name_drop_event) {
-    console.log(item_name_drop_event.dataTransfer.getData('name'));
     let item = items.find((y)=>{
         return y.name == item_name_drop_event.dataTransfer.getData('name');
     });
@@ -161,6 +155,7 @@ function remove_from_comparison_items(item_name){
         return item.name != item_name;
     }
     compare_table.update((data)=>{
+        console.log(data);
         return {
             images: data.images.filter(item_name_filter),
             names: data.names.filter(item_name_filter),
@@ -170,7 +165,9 @@ function remove_from_comparison_items(item_name){
     });
     compare_table.render();
 }
-// TODO button click event handler
+function comparison_remove_handler(click_event){
+    remove_from_comparison_items(click_event.target.parentElement.querySelector('span.name').innerText);
+}
 
 function render(target, template, data) {
     function replace(a, b) {
@@ -183,10 +180,8 @@ function render(target, template, data) {
             switch (typeof data) {
             case 'object':
                 if (Array.isArray(data)) {
-                    // console.log('constructing list!');
                     return construct_list(template, data);
                 } else {
-                    // console.log('constructing object!');
                     return construct_object(template, data);
                 }
             case 'string': return construct_object(template, {'string': data});
@@ -198,11 +193,8 @@ function render(target, template, data) {
             var frag = document.importNode(template, true).content.firstElementChild;
             var chip;
             for (var key in data) {
-                // console.log(key);
                 if (Array.isArray(data[key])){
                     chip = frag.querySelector('template.' + key);
-                    console.log(chip);
-                    console.log(construct_list(chip, data[key]));
                     chip.parentElement.replaceChild(construct_list(chip, data[key]), chip);
                 }
                 switch (key) {
@@ -217,7 +209,6 @@ function render(target, template, data) {
                     if (chip) {chip.textContent = (data[key]) ? "Contains Meat" : "Vegetarian";}
                     break;
                 case 'nuts':
-                    console.log('here');
                     chip = frag.querySelector('.' + key);
                     if (chip) {chip.textContent = (data[key]) ? "Contains Nuts" : "Nut Free";}
                     break;
@@ -244,10 +235,8 @@ function RenderedElement(target, template, data) {
         switch (typeof data) {
         case 'object':
             if (Array.isArray(data)) {
-                // console.log('constructing list!');
                 return construct_list(template, data);
             } else {
-                // console.log('constructing object!');
                 return construct_object(template, data);
             }
         case 'string': return construct_object(template, {'string': data});
@@ -259,11 +248,8 @@ function RenderedElement(target, template, data) {
         var frag = document.importNode(template, true).content.firstElementChild;
         var chip;
         for (var key in data) {
-            // console.log(key);
             if (Array.isArray(data[key])){
                 chip = frag.querySelector('template.' + key);
-                console.log(chip);
-                console.log(construct_list(chip, data[key]));
                 chip.parentElement.replaceChild(construct_list(chip, data[key]), chip);
             }
             switch (key) {
@@ -278,7 +264,6 @@ function RenderedElement(target, template, data) {
                 if (chip) {chip.textContent = (data[key]) ? "Contains Meat" : "Vegetarian";}
                 break;
             case 'nuts':
-                console.log('here');
                 chip = frag.querySelector('.' + key);
                 if (chip) {chip.textContent = (data[key]) ? "Contains Nuts" : "Nut Free";}
                 break;

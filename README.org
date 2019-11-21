@@ -14,8 +14,9 @@
 ***** STRETCH functional search bar?
        
 *** compare-table
-**** TODO Visual appeal
-    - [ ] correct proportions with normal range of dimensions
+**** DONE Visual appeal
+     CLOSED: [2019-11-20 Wed 18:28]
+    - [X] correct proportions with normal range of dimensions
 **** DONE bring up                                                       :js:
      CLOSED: [2019-11-16 Sat 22:28]
      selected items as global variables?
@@ -29,14 +30,13 @@
      CLOSED: [2019-11-16 Sat 22:28]
 **** rows
 ***** Make header cells pretty?
-
-
 **** columns
 ***** extend ondrop                                                      :js:
-***** TODO remove button                                                 :js:
+***** DONE remove button                                                 :js:
+      CLOSED: [2019-11-20 Wed 18:28]
 ***** TODO bold 'optimal' cell                                       :js:css:
 
-
+      
 **** related items
 ***** CLEAN drag interaction                                             :js:
        items to expand comparison-table
@@ -46,13 +46,12 @@
 ***** 
 
 
-*** TODO visually appealing page                                        :css:
-    - [ ] revamp header
+*** DONE visually appealing page?                                       :css:
+    CLOSED: [2019-11-20 Wed 18:09]
+    - [X] revamp header
       probably just a string of spans with css specified width percentages
     - Censensus: Don't add sidebar
       probably just a string of divs with css specified height percentages
-
-       
 ** DONE template architecture                                            :js:
    CLOSED: [2019-11-16 Sat 22:29] DEADLINE: <2019-11-16 Sat>
    works for 
