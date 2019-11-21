@@ -136,6 +136,7 @@ function allowDrop(event){
     event.preventDefault();
 }
 // TODO refactor table update logic out of event handling logic
+// TODO check if table already contains item?
 function add_to_comparison_items(item_name_drop_event) {
     console.log(item_name_drop_event.dataTransfer.getData('name'));
     let item = items.find((y)=>{
