@@ -5,6 +5,7 @@
         <title>Team Watercress Save On Foods Mockup</title>
         <link href="base.css" rel="stylesheet"/>
         <script src="base.js"> </script>
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     </head>
     <body>
         <!-- TODO revamp header -->
@@ -26,24 +27,18 @@
         <div class="breadcrumbs">
             <span>Shop Home</span> > <span>Search Results</span>
         </div>
-        <hr/>
-        <div>
+        <div class = "breadcrumbs">
             Search Results: soup  (12)
         </div>
         <div>
-            <!-- Refine v | Best Match v | -->
-            <button class="fr" onclick="show_comparison_popup(event)">Compare</button>
+            <button class="fr compare_button hidden_until_two_selected" onclick="show_comparison_popup(event)">Compare Selected</button>
             <!-- <button onclick="comparison_table.show(event)">Compare</button> -->
             <!-- <button disabled class="fr">Tile</button><button class="fr"><strong>List</strong></button> -->
         </div>
-        <hr/>
          <!-- TODO Sidebar; reference figma -->
         <table>
             <thead>
-                <th>Image</th>
-                <th>Description</th>
-                <th>Price(CAD)</th>
-                <th>Controls</th>
+                
             </thead>
             <tbody class="searchResults">
                 <template> <tr>
@@ -52,40 +47,42 @@
                     </td>
 
                     <td>
+
                         <div class="name"></div>
+                        
                         <div><span class="mass"></span> ml</div>
                         <div>Product of <span class="country_of_origin"></span></div>
                     </td>
                     <td>
+                        <div class="vl"></div>
                         <span class="price"></span>
                     </td>
                     <td>
-                        <label for="">Compare</label>
-                        <input name="" type="checkbox" value=""/>
+                        <label  for="">Compare</label>
+                        <input name="" onchange="update_comparison_button(event)" type="checkbox" value=""/>
                         <button disabled>Add to Cart</button>
                     </td>
 
                 </tr> </template>
             </tbody>
         </table>
-        <div class="popup"">
-            <button onclick="hide_comparison_popup(event)" class="fr">x</button>
+        <div class="popup">
+            <button onclick="hide_comparison_popup(event)" class="frx">X</button>
             <!-- <button onclick="expand_comparison_table(event)" class="fr">+</button> -->
             <table class="compare" ondrop="add_to_comparison_items(event)" ondragover="allowDrop(event)">
                 <template><tbody>
                     <tr> <th></th>
                         <template class="images"><td>
                             <img alt="" src=""/>
+                            <span style="display:none" class="name"></span>
+                            <button onclick="comparison_remove_handler(event)" class="frx top_right">X</button>
                         </td></template>
                     </tr>
                     <tr> <th>Item</th>
                         <template class="names"><td>
-                            <span class="name"></span>
-                            <button onclick="comparison_remove_handler(event)">X</button>
                             <div>
                                 <span class="price"></span>
-                                <button onclick="add_to_cart_mimicry(event)"
-                                        class="trim">Add to Cart: <span class="quantity">0</span></button>
+                        
                             </div>
                         </td></template>
                     </tr>
@@ -103,6 +100,12 @@
                         <template class="diet"><td>
                             <div class="meat"></div>
                             <div class="nuts"></div>
+                        </td></template>
+                    </tr><th></th>
+                        <template class="cart"><td>
+                            <button onclick="add_to_cart_mimicry(event)"
+                            class="trim">Add to Cart
+                             <span class="quantity">0</span></button>
                         </td></template>
                     </tr>
                 </tbody></template>
