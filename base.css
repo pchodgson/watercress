@@ -7,7 +7,10 @@ header span {
     width: 14vw;
     display: inline-block;
     font-family: 'IBM Plex Sans', sans-serif;
-
+}
+input.rounded {
+    border-radius: 3px;
+    width: 12vw;
 }
 .trim {
     background: #7ac253;
