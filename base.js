@@ -124,6 +124,9 @@ function add_to_comparison_items(item_name_drop_event) {
         // data.names.concat(item);
         // data.nutrition.concat(item);
         // data.diet.concat(item);
+        if (data.images.length > 5){
+            return data;
+        }
         return {
             images: data.images.concat(item),
             names: data.names.concat(item),
