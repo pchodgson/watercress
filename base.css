@@ -85,7 +85,7 @@ button.hidden_until_two_selected {
   .close:after {
     transform: rotate(-45deg);
   }
-  
+
 
 
 
@@ -193,6 +193,11 @@ color: #575353;
 
 }
 
+li {
+    margin-right: 8px;
+    padding: 4px;
+    border-right: 1px solid gray;
+}
 img {
     width: 85px;
     height: 85px;
@@ -217,3 +222,4 @@ img.logo {
     font-family: 'IBM Plex Sans', sans-serif;
 
 }
+
